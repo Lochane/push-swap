@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:46:28 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/02/23 17:45:48 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/02/25 00:35:16 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,8 @@
 
 int	main(int argc, char **argv)
 {
-	parsing(argc, argv);
+	t_data *data_a;
+
+	data_a = build_data_struct(argc, argv);
+	(void)data_a;
 }

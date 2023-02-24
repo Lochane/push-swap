@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:09:36 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/02/23 17:57:27 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/02/25 00:34:09 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 
 # include "./libft/libft.h"
 
-void	parsing(int argc, char **argv);
+typedef struct s_data
+{
+	int				nbr;
+	int 			size;
+	struct s_data	*next;
+}	t_data;
+
+t_data	*build_data_struct(int argc, char **argv);
+t_data	*create_newnode(int nbr);
+void	addnode_back(t_data **data, t_data *node);
+void	print_linkedlist(t_data *data);
+
 
 #endif
