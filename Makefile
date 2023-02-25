@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+         #
+#    By: lochane <lochane@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 15:42:20 by lsouquie          #+#    #+#              #
-#    Updated: 2023/02/23 17:39:47 by lsouquie         ###   ########.fr        #
+#    Updated: 2023/02/25 01:27:44 by lochane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = $(addprefix src/, main parsing_linkedlist)
+SRC = $(addprefix src/, push_swap manage_linkedlist check utils)
 
 OBJ = $(addsuffix .o, ${SRC})
 CC = cc

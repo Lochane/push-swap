@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 13:46:28 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/02/25 00:35:16 by lochane          ###   ########.fr       */
+/*   Created: 2023/02/25 01:29:08 by lochane           #+#    #+#             */
+/*   Updated: 2023/02/25 02:24:31 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// int	main(int argc, char **argv)
-// {
-// 	int	i;
-
-// 	i = 1;
-// 	while (i < argc)
-// 	{
-// 		ft_printf("%s", argv[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }
-
-int	main(int argc, char **argv)
+void	print_linkedlst(t_data *data)
 {
-	t_data *data_a;
+	while (data)
+	{
+		ft_printf("%d\n", data->nbr);
+		data = data->next;
+	}
+}
 
-	data_a = build_data_struct(argc, argv);
-	(void)data_a;
+void error_msg(char *msg, int tofree)
+{
+	write(2, msg, ft_strlen(msg));
+	exit (0);
+	(void)tofree;
 }

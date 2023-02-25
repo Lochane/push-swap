@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_linkedlist.c                               :+:      :+:    :+:   */
+/*   manage_linkedlist.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:33:31 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/02/25 00:40:08 by lochane          ###   ########.fr       */
+/*   Updated: 2023/02/25 02:24:44 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_data	*build_data_struct(int argc, char **argv)
+t_data	*build_linkedlst_struct(int argc, char **argv)
 {
 	t_data	*stack;
 	t_data	*newnode;
@@ -26,7 +26,6 @@ t_data	*build_data_struct(int argc, char **argv)
 		addnode_back(&stack, newnode);
 		i++;
 	}
-	print_linkedlist(stack);
 	return(stack);
 }
 
@@ -56,13 +55,4 @@ void	addnode_back(t_data **data, t_data *node)
 	}
 	else
 	*data = node;
-}
-
-void	print_linkedlist(t_data *data)
-{
-	while (data)
-	{
-		ft_printf("%d\n", data->nbr);
-		data = data->next;
-	}
 }
