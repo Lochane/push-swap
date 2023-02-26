@@ -6,44 +6,32 @@
 /*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:34:29 by lochane           #+#    #+#             */
-/*   Updated: 2023/02/25 02:34:03 by lochane          ###   ########.fr       */
+/*   Updated: 2023/02/26 10:13:25 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	check_integrity(int argc, char **argv)
+void	check_integrity(int argc)
 {
 	if (argc < 1)
 		error_msg("Error:\nNo arguments\n", 0);
 	if (argc < 3)
 		error_msg("Error:\nYou need at least 3 arguments to start the program\n", 0);
-	check_nbr(argc, argv);
 }
 
-void	check_nbr(int argc, char **argv)
+void	check_nbr(t_data **data)
 {
-	int	i;
-	int	j;
-	char c;
+	t_data *temp;
 
-	i = 1;
-	j = 0;
-	c = argv[i][j];
-	while(i < argc)
+	temp = *data;
+	while(data && (*data))
 	{
-		while (argv[i][j])
+		if (ft_isdigit(temp->nbr) == 1)
 		{
-			c = argv[i][j];
-			ft_printf("%c\n", c);
-			if ((argv[i][j] <= '0' && argv[i][j] >= '9') && argv[i][j] != '-')
-			{
-				ft_printf("Error:\nAn invalid character as been found\nIt takes place in the %d arguments\n", argc);
-				error_msg("Please enter only digital character\n", 0);
-			}
-		j++;
+				error_msg("Error:\nAn invalid character as been found\nPlease enter only digital character\n", 0);
 		}
-	i++;
+		temp = temp->next;
 	}
 	
 }
