@@ -6,7 +6,7 @@
 /*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:09:36 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/02/26 10:29:39 by lochane          ###   ########.fr       */
+/*   Updated: 2023/02/26 16:36:05 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	addnode_back(t_data **data, t_data *node);
 void	print_linkedlst(t_data *data);
 void error_msg(char *msg, int tofree);
 
-void	check_integrity(int argc);
-void	check_nbr(t_data *data);
+void	check_integrity(char **argv, int argc);
+void	check_nbr(char **argv, int argc);
 
 
 #endif
