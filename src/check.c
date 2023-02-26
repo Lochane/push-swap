@@ -6,7 +6,7 @@
 /*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:34:29 by lochane           #+#    #+#             */
-/*   Updated: 2023/02/26 10:13:25 by lochane          ###   ########.fr       */
+/*   Updated: 2023/02/26 10:36:52 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,19 @@ void	check_integrity(int argc)
 		error_msg("Error:\nYou need at least 3 arguments to start the program\n", 0);
 }
 
-void	check_nbr(t_data **data)
+void	check_nbr(t_data *data)
 {
-	t_data *temp;
+	int c;
 
-	temp = *data;
-	while(data && (*data))
+	while(data)
 	{
-		if (ft_isdigit(temp->nbr) == 1)
+		c = data->nbr;
+		(void)c;
+		if (ft_isdigit(data->nbr) == 1)
 		{
 				error_msg("Error:\nAn invalid character as been found\nPlease enter only digital character\n", 0);
 		}
-		temp = temp->next;
+		data = data->next;
 	}
 	
 }

@@ -6,7 +6,7 @@
 /*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:46:28 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/02/26 10:14:26 by lochane          ###   ########.fr       */
+/*   Updated: 2023/02/26 10:38:28 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ int	main(int argc, char **argv)
 
 	check_integrity(argc);
 	data_a = build_linkedlst_struct(argc, argv);
-	check_nbr(&data_a);
+	//check_nbr(&data_a);
 	print_linkedlst(data_a);
 }
