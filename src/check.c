@@ -6,7 +6,7 @@
 /*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:34:29 by lochane           #+#    #+#             */
-/*   Updated: 2023/02/26 16:48:51 by lochane          ###   ########.fr       */
+/*   Updated: 2023/02/26 19:21:21 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,14 @@ void	check_nbr(char **argv, int argc)
 	j = 0;
 	while(i < argc)
 	{
-		while(j < ft_strlen(argv[i]))
+		while(argv[i][j])
 		{
 
+			if (argv[i][j] == '+' || argv[i][j] == '-')
+			{
+				if(argv[i][j + 1] == '\0')
+					error_msg("Error:\nNo addition allowed", 0);
+			}
 			if (ft_isdigit(argv[i][j]) == 0)
 			{
 				error_msg("Error:\nAn invalid character as been found\nPlease enter only digital character\n", 0);
