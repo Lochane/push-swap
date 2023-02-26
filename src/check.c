@@ -6,7 +6,7 @@
 /*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:34:29 by lochane           #+#    #+#             */
-/*   Updated: 2023/02/26 16:39:28 by lochane          ###   ########.fr       */
+/*   Updated: 2023/02/26 16:48:51 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	check_nbr(char **argv, int argc)
 	{
 		while(j < ft_strlen(argv[i]))
 		{
-			if (ft_isdigit(argv[i][j]) == 1)
+
+			if (ft_isdigit(argv[i][j]) == 0)
 			{
 				error_msg("Error:\nAn invalid character as been found\nPlease enter only digital character\n", 0);
 			}
