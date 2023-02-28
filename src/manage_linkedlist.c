@@ -6,57 +6,48 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:33:31 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/02/27 18:49:48 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/02/28 19:57:02 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_data	*build_linkedlst_struct(int argc, char **argv)
+t_list	*build_linkedlst_struct(int argc, char **argv)
 {
-	t_data	*list;
-	t_data	*newnode;
+	t_list	*list;
+	t_list	*newnode;
 	int		i;
 
-	list = create_newnode(ft_long_atoi(argv[1]));
+	list = NULL;
+	list = create_newnode(ft_long_atoi(argv[1]), list);
 	i = 2;
 	while (i < argc)
 	{
-		newnode = create_newnode(ft_long_atoi(argv[i]));
-		addnode_back(&list, newnode);
+		newnode = create_newnode(ft_long_atoi(argv[i]), list);
+		ft_lstadd_back(&list, newnode);
 		i++;
 	}
 	if (check_double_nbr(list) == 0)
-		error_msg("Error\n", 0, list);
+		error_msg("Error\n", 1, &list);
 	return (list);
 }
 
-t_data	*create_newnode(long nbr, t_data *data)
+t_list	*create_newnode(long nbr, t_list *data)
 {
-	t_data	*node;
+	t_list	*node;
+	int		*content;
 
 	if (nbr > INT_MAX || nbr < INT_MIN)
-		error_msg("Error\n", 0);
-	node = malloc(sizeof(t_data));
+		error_msg("Error\n", 1, &data);
+	node = malloc(sizeof(t_list));
 	if (!node)
 		return (NULL);
-	node->nbr = nbr;
+	content = malloc(sizeof(int) * 1);
+	if (!content)
+		return (NULL);
+	*content = nbr;
+	node->content = content;
 	node->next = NULL;
 	return (node);
-
 }
 
-void	addnode_back(t_data **data, t_data *node)
-{
-	t_data	*temp;
-
-	temp = *data;
-	if (data && (*data))
-	{
-		while (temp->next != NULL)
-			temp = temp->next;
-		temp->next = node;
-	}
-	else
-	*data = node;
-}

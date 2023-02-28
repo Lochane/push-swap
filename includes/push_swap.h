@@ -6,7 +6,7 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:09:36 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/02/27 18:43:59 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/02/28 19:54:09 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,16 @@
 # include <stdio.h>
 # include <limits.h>
 
-typedef struct s_data
-{
-	int				nbr;
-	struct s_data	*next;
-}	t_data;
+t_list	*build_linkedlst_struct(int argc, char **argv);
+t_list	*create_newnode(long nbr, t_list *data);
 
-t_data	*build_linkedlst_struct(int argc, char **argv);
-t_data	*create_newnode(long nbr);
-void	addnode_back(t_data **data, t_data *node);
-
-void	print_linkedlst(t_data *data);
-void	error_msg(char *msg, int tofree, t_data *data);
+void	print_linkedlst(t_list *data);
+void	error_msg(char *msg, int tofree, t_list **data);
+void	free_linkedlst(t_list **data);
 long	ft_long_atoi(const char *str);
 
-void	check_integrity(char **argv, int argc);
-int		check_double_nbr(t_data *data);
-void	check_nbr(char **argv, int argc);
+void	check_integrity(char **argv, int argc, t_list *data);
+int		check_double_nbr(t_list *data);
+void	check_nbr(char **argv, int argc, t_list *data);
 
 #endif
