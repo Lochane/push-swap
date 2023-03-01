@@ -1,25 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsouquie <lsouquie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 10:15:47 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/02/24 23:37:40 by lsouquie          ###   ########.fr       */
+/*   Created: 2023/02/28 23:42:48 by lochane           #+#    #+#             */
+/*   Updated: 2023/02/28 23:42:59 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-t_list	*ft_lstnew(void *content)
-{
-	t_list	*liste;
-
-	liste = malloc(sizeof(t_list));
-	if (!liste)
-		return (NULL);
-	liste->content = content;
-	liste->next = NULL;
-	return (liste);
-}
+#include "../includes/push_swap.h"

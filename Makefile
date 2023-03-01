@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+         #
+#    By: lsouquie <lsouquie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 15:42:20 by lsouquie          #+#    #+#              #
-#    Updated: 2023/02/27 17:59:30 by lsouquie         ###   ########.fr        #
+#    Updated: 2023/02/28 23:29:06 by lsouquie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = $(addprefix src/, push_swap manage_linkedlist check utils)
+SRC = $(addprefix src/, push_swap manage_linkedlist check utils push swap rotate reverse_rotate print_pile)
 
 OBJ = $(addsuffix .o, ${SRC})
 CC = cc
