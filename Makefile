@@ -26,7 +26,7 @@ all: $(NAME)
 		@${CC} ${CFLAGS} -c $< -o $@ -I${HEADER}
 
 $(NAME): ${OBJ}
-			echo "			-> Compiling $(NAME)..."
+			@echo "			-> Compiling $(NAME)..."
 			@make -C ./libft
 			@${CC} ${OBJ} ${PATH_LIBFT} -o ${NAME}
 			@echo "			-> Compiled $(NAME)"
