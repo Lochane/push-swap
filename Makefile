@@ -15,6 +15,7 @@ NAME = push_swap
 SRC = $(addprefix src/, push_swap manage_linkedlist check utils push swap rotate reverse_rotate print_pile)
 
 OBJ = $(addsuffix .o, ${SRC})
+OBJ := $(addprefix obj/, $(OBJ))
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -g3
 HEADER = .
@@ -22,17 +23,20 @@ PATH_LIBFT = ./libft/libft.a
 
 all: $(NAME)
 
-%.o:%.c
+obj/%.o:	%.c
+		@mkdir -p $(dir $@)
 		@${CC} ${CFLAGS} -c $< -o $@ -I${HEADER}
 
-$(NAME): ${OBJ}
+$(NAME): $(OBJFLDR) ${OBJ}
 			@echo "			-> Compiling $(NAME)..."
 			@make -C ./libft
 			@${CC} ${OBJ} ${PATH_LIBFT} -o ${NAME}
 			@echo "			-> Compiled $(NAME)"
+${OBJFLDR}:
+		@mkdir -p .obj/
 
 clean:
-		@rm -f ${OBJ}
+		@rm -rf obj
 		@make clean -C ./libft
 fclean: clean
 		@rm -f $(NAME)
