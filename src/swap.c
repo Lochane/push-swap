@@ -11,3 +11,12 @@
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void swap(t_list **pile)
+{
+	t_list *tmp;
+	if((!(*pile)) || (!(*pile)->next))
+		return ;
+	
+	print_lst((*pile));
+}

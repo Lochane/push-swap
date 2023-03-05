@@ -6,7 +6,7 @@
 /*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:09:36 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/01 04:08:48 by lochane          ###   ########.fr       */
+/*   Updated: 2023/03/05 18:55:28 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int		check_double_nbr(t_list *data);
 void	check_nbr(char **argv, int argc, t_list *data);
 
 
-void	push_b(t_list *pile_a, t_list **pile_b);
+void swap(t_list **pile);
+void	push(t_list *pile_a, t_list **pile_b);
 
 #endif

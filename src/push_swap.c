@@ -15,20 +15,13 @@
 int	main(int argc, char **argv)
 {
 	t_list	*pile_a;
-	t_list	*pile_b;
+	// t_list	*pile_b;
 
 	pile_a = NULL;
-	pile_b = NULL;
+	// pile_b = NULL;
 	check_integrity(argv, argc, pile_a);
 	pile_a = build_linkedlst_struct(argc, argv);
-	(void)pile_a;
-	//(void)pile_b;
-	//print_result(pile_a, pile_b);
-	push_b(pile_a, &pile_b);
-	//print_result(pile_a, pile_b);
-	push_b(pile_a, &pile_b);
-	print_lst(pile_b);	
-
-	//print_result(pile_a, pile_b);
+	print_lst(pile_a);	
+	swap(&pile_a);
 
 }
