@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:09:36 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/05 18:55:28 by lochane          ###   ########.fr       */
+/*   Updated: 2023/03/06 14:05:54 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		check_double_nbr(t_list *data);
 void	check_nbr(char **argv, int argc, t_list *data);
 
 
-void swap(t_list **pile);
+void 	swap(t_list *pile);
 void	push(t_list *pile_a, t_list **pile_b);
 
 #endif

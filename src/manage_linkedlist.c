@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_linkedlist.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsouquie <lsouquie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:33:31 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/02/28 23:08:19 by lsouquie          ###   ########.fr       */
+/*   Updated: 2023/03/06 13:53:33 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ t_list	*build_linkedlst_struct(int argc, char **argv)
 
 	list = NULL;
 	list = create_newnode(ft_long_atoi(argv[1]), list);
-	if  (!list)
-			error_msg("Error\n", 0, &list);
+	if (!list)
+		error_msg("Error\n", 0, &list);
 	i = 2;
 	while (i < argc)
 	{

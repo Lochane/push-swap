@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	// pile_b = NULL;
 	check_integrity(argv, argc, pile_a);
 	pile_a = build_linkedlst_struct(argc, argv);
-	print_lst(pile_a);	
-	swap(&pile_a);
+	swap(pile_a);
+	// print_lst(pile_a);	
 
 }
