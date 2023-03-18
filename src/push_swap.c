@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsouquie <lsouquie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:46:28 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/02/28 23:26:08 by lsouquie          ###   ########.fr       */
+/*   Updated: 2023/03/18 16:59:42 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ int	main(int argc, char **argv)
 	pile_b = NULL;
 	check_integrity(argv, argc, pile_a);
 	pile_a = build_linkedlst_struct(argc, argv);
-	push(&pile_a, &pile_b);
-	push(&pile_a, &pile_b);
 
-//	print_lst(pile_a);	
 
+	clear_both_pile(&pile_a, &pile_b);
 }

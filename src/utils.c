@@ -46,4 +46,9 @@ long	ft_long_atoi(const char *str)
 	return (nb * neg);
 }
 
-
+void	clear_both_pile(t_list **pile_a, t_list **pile_b)
+{
+	ft_lstclear(pile_a, &free);
+	ft_lstclear(pile_b, &free);
+	exit(1);
+}
