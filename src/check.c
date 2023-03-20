@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 01:34:29 by lsouquie           #+#    #+#             */
-/*   Updated: 2023/02/28 19:45:35 by lsouquie         ###   ########.fr       */
+/*   Created: 2023/02/25 01:34:29 by lsouquie          #+#    #+#             */
+/*   Updated: 2023/03/20 12:36:00 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,8 @@ void	check_nbr(char **argv, int argc, t_list *data)
 			{
 				if (ft_isdigit(argv[i][j + 1]) == 0)
 					error_msg("Error\n", 0, &data);
-
 				if (ft_isdigit(argv[i][j - 1]) == 1)
 					error_msg("Error\n", 0, &data);
-
 			}
 		j++;
 		}	

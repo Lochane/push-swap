@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lochane <lochane@student.42.fr>            +#+  +:+       +#+         #
+#    By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:08:51 by lsouquie          #+#    #+#              #
-#    Updated: 2023/03/05 03:27:38 by lochane          ###   ########.fr        #
+#    Updated: 2023/03/20 12:23:23 by lsouquie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ CC = cc
 FLAGS = -Wall -Werror -Wextra
 	
 all: $(NAME)
+
 
 $(NAME): ${OBJFLDR} $(OBJ)
 		@echo "			-> Compiling $(NAME)..."

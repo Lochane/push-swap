@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 01:29:08 by lsouquie           #+#    #+#             */
-/*   Updated: 2023/02/28 19:54:48 by lsouquie         ###   ########.fr       */
+/*   Created: 2023/02/25 01:29:08 by lsouquie          #+#    #+#             */
+/*   Updated: 2023/03/20 16:00:22 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,3 +52,8 @@ void	clear_both_pile(t_list **pile_a, t_list **pile_b)
 	ft_lstclear(pile_b, &free);
 	exit(1);
 }
+
+// char	*linked_lst_to_tab(t_list *lst)
+// {
+	
+// }
