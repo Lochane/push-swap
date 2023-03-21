@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:29:08 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/20 16:00:22 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/03/21 03:15:32 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,11 @@ long	ft_long_atoi(const char *str)
 	return (nb * neg);
 }
 
-void	clear_both_pile(t_list **pile_a, t_list **pile_b)
+void	clear_progr(t_list **stack_a, t_list **stack_b, t_data *data)
 {
-	ft_lstclear(pile_a, &free);
-	ft_lstclear(pile_b, &free);
+	ft_lstclear(stack_a, &free);
+	ft_lstclear(stack_b, &free);
+	free(data);
 	exit(1);
 }
 

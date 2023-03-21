@@ -12,7 +12,7 @@
 
 NAME = push_swap
 
-SRC = $(addprefix src/, push_swap manage_linkedlist check utils push swap rotate reverse_rotate print_pile algo)
+SRC = $(addprefix src/, push_swap manage_linkedlist check utils push swap rotate reverse_rotate print_stack algo)
 
 OBJ = $(addsuffix .o, ${SRC})
 OBJ := $(addprefix obj/, $(OBJ))
@@ -31,7 +31,7 @@ $(NAME): $(OBJFLDR) ${OBJ}
 			@echo "			-> Compiling $(NAME)..."
 			@make -C ./libft
 			@${CC} ${OBJ} ${PATH_LIBFT} -o ${NAME}
-			@echo "			-> Compiled $(NAME)"
+			@echo "			-> Comstackd $(NAME)"
 ${OBJFLDR}:
 		@mkdir -p .obj/
 

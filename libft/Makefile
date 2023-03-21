@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+         #
+#    By: lochane <lochane@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:08:51 by lsouquie          #+#    #+#              #
-#    Updated: 2023/03/20 12:23:23 by lsouquie         ###   ########.fr        #
+#    Updated: 2023/03/21 01:06:59 by lochane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ all: $(NAME)
 $(NAME): ${OBJFLDR} $(OBJ)
 		@echo "			-> Compiling $(NAME)..."
 		@ar rcs $(NAME) $(OBJ)
-		@echo "			-> Compiled $(NAME)"
+		@echo "			-> Comstackd $(NAME)"
 
 ${OBJFLDR}:
 		@mkdir -p .obj/

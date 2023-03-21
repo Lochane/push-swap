@@ -6,7 +6,7 @@ OBJDIR = obj
 
 SRCS = $(SRCDIR)/push_swap.c $(SRCDIR)/manage_linkedlist.c $(SRCDIR)/check.c $(SRCDIR)/utils.c \
 		$(SRCDIR)/push.c $(SRCDIR)/swap.c $(SRCDIR)/rotate.c $(SRCDIR)/reverse_rotate.c \
-		$(SRCDIR)/print_pile.c $(SRCDIR)/algo.c \
+		$(SRCDIR)/print_pile.c $(SRCDIR)/algo_three.c $(SRCDIR)/algo_utils.c \
 
 OBJS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRCS))
  
@@ -20,7 +20,7 @@ all: $(NAME)
 $(NAME): $(OBJS) | lib
 		@echo "			-> Compiling $(NAME)..."
 		@$(CC) $(OBJS) $(LIBPATH) -o $@
-		@echo "			-> Compiled $(NAME)"
+		@echo "			-> Comstackd $(NAME)"
 
 $(OBJDIR):
 	@mkdir -p $(OBJDIR)

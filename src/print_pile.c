@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_pile.c                                       :+:      :+:    :+:   */
+/*   print_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -21,24 +21,24 @@ void	print_lst(t_list *data)
 	}
 }
 
-void	print_result(t_list *pile_a ,t_list *pile_b)
+void	print_result(t_list *stack_a ,t_list *stack_b)
 {
-	ft_printf("\n		PILE A		|		PILE_B		\n				|\n");
-	if (pile_b)
+	ft_printf("\n		stack A		|		stack_B		\n				|\n");
+	if (stack_b)
 	{
-		while(pile_b)
+		while(stack_b)
 		{
-			ft_printf("		 %d		|		 %d		\n\n", *(int *)pile_a->content, *(int *)pile_b->content);
-			print_lst(pile_b);	
-			pile_a = pile_a->next;
-			pile_b = pile_b->next;
+			ft_printf("		 %d		|		 %d		\n\n", *(int *)stack_a->content, *(int *)stack_b->content);
+			print_lst(stack_b);	
+			stack_a = stack_a->next;
+			stack_b = stack_b->next;
 		}
 	}
-	while (pile_a)
+	while (stack_a)
 	{
-		ft_printf("		 %d		|\n", *(int *)pile_a->content);
-		pile_a = pile_a->next;
-		(void)pile_b;
+		ft_printf("		 %d		|\n", *(int *)stack_a->content);
+		stack_a = stack_a->next;
+		(void)stack_b;
 	}
 	ft_printf("\n-----------------------------------------------------------------\n\n");
 }
