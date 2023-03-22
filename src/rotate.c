@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 23:42:48 by lochane           #+#    #+#             */
-/*   Updated: 2023/03/21 02:08:37 by lochane          ###   ########.fr       */
+/*   Updated: 2023/03/22 15:30:45 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rotate(t_list **stack)
+void	rotate(t_list **stack, char c, t_data *data)
 {
 	t_list	*tmp;
 
@@ -23,11 +23,17 @@ void	rotate(t_list **stack)
 	tmp->next = (*stack);
 	(*stack) = (*stack)->next;
 	tmp->next->next = NULL;
-	ft_printf("r\n");
+	if (c == 'a')
+		data->move.ra += 1;
+	if (c == 'b')
+		data->move.rb += 1;
+	data->move.total += 1;
+	ft_printf("r%c\n", c);
 }
 
-void	rotate_both(t_list **stack_a, t_list **stack_b)
+void	rrotate(t_list **stack_a, t_list **stack_b, char c, t_data *data)
 {
-	rotate(stack_a);
-	rotate(stack_b);
+	rotate(stack_a, c, data);
+	rotate(stack_b, c, data);
+	data->move.rr += 1;
 }
