@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:46:28 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/22 19:35:56 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/03/23 00:08:43 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ int	main(int argc, char **argv)
 	if (verify_stack(stack_a, data) == 1)
 		return (clear_progr(&stack_a, &stack_b, data), 0);
 	sorting_fivenb_algo(&stack_a, &stack_b, data);
-	// print_lst(stack_a);
-	// printf("----------\n");
-	// print_lst(stack_b);
+	printf("----------\n");
+	print_lst(stack_a);
+	printf("----------\n");
+	print_lst(stack_b);
 
 	ft_printf("Total move = %d\n", data->move.total);
 	clear_progr(&stack_a, &stack_b, data);

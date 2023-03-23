@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mini_algo_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 02:46:03 by lochane           #+#    #+#             */
-/*   Updated: 2023/03/22 20:01:46 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/03/23 01:08:18 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,10 @@ void	find_hightest(t_list *stack, t_data *data)
 	int		i;
 
 	i = 1;
-	tmp = stack->next;
-		printf("lowest is  = %d\n lol is = %d\n", *(int *)stack->content, *(int *)tmp->content);
+	tmp = stack;
 	while (stack)
 	{
-		if (*(int *)stack->content > *(int *)tmp->content)
+		if (*(int *)stack->content >= *(int *)tmp->content)
 		{
 			tmp = stack;
 			data->hightest_nbplace = i;
@@ -30,8 +29,6 @@ void	find_hightest(t_list *stack, t_data *data)
 		i++;
 		stack = stack->next;
 	}
-	// printf("hightest is  = %d\n", data->hightest_nbplace);
-
 }
 
 void	find_lowest(t_list *stack, t_data *data)
@@ -40,11 +37,10 @@ void	find_lowest(t_list *stack, t_data *data)
 	int		i;
 
 	i = 1;
-	tmp = stack->next;
-	print_lst(stack);
+	tmp = stack;
 	while (stack)
 	{
-		if (*(int *)stack->content < *(int *)tmp->content)
+		if (*(int *)stack->content <= *(int *)tmp->content)
 		{
 			tmp = stack;
 			data->lowestnb_place = i;
