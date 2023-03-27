@@ -6,7 +6,7 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 13:43:46 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/27 13:59:15 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/03/27 20:38:25 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	initialise_struct(t_list *stack_a, t_data *data)
 {
 	data->hightest_nbplace = 1;
-	data->lowestnb_place = 1;
+	data->lowestnb_place = 0;
 	data->occurence_place = 0;
 	data->size = ft_lstsize(stack_a);
 	data->mediane = (data->size / 2) + (data->size % 2);
