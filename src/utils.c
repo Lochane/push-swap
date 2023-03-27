@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:29:08 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/21 03:15:32 by lochane          ###   ########.fr       */
+/*   Updated: 2023/03/27 13:47:30 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,4 @@ void	clear_progr(t_list **stack_a, t_list **stack_b, t_data *data)
 	exit(1);
 }
 
-// char	*linked_lst_to_tab(t_list *lst)
-// {
-	
-// }
+

@@ -8,7 +8,7 @@ SRCS = $(SRCDIR)/push_swap.c $(SRCDIR)/manage_linkedlist.c $(SRCDIR)/check.c $(S
 		$(SRCDIR)/push.c $(SRCDIR)/swap.c $(SRCDIR)/rotate.c $(SRCDIR)/reverse_rotate.c \
 		$(SRCDIR)/print_pile.c $(SRCDIR)/mini_algo.c $(SRCDIR)/mini_algo_utils.c \
 		$(SRCDIR)/manage_struct.c $(SRCDIR)/mini_algo_utils2.c \
-
+# INC = $(addprefix includes/, push_swap.h)
 OBJS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRCS))
  
 
@@ -40,8 +40,10 @@ fclean: clean
 		@rm -f $(NAME)
 		@make fclean -C ./libft
 
+norme:
+		norminette $(SRCS)
 
 re: fclean all
 
-.PHONY: all lib clean fclean re
+.PHONY: all lib clean fclean re norme
 	

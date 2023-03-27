@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 23:29:18 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/23 00:35:14 by lochane          ###   ########.fr       */
+/*   Updated: 2023/03/27 14:00:56 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ void	push(t_list **src, t_list **dest, char c, t_data *data)
 		data->move.pb += 1;
 	data->move.total += 1;
 	data->size = ft_lstsize((*src));
+	data->mediane = (data->size / 2) + (data->size % 2);
 	ft_printf("p%c\n", c);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mini_algo_utils2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:37:43 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/23 01:10:14 by lochane          ###   ########.fr       */
+/*   Updated: 2023/03/27 14:12:52 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,24 @@ void	hightest_down(t_list **stack, t_data *data)
 		reverse_rotate(stack, 'a', data);
 }
 
-void	manage_hightest(t_list **stack_a, t_list **stack_b, t_data *data)
+void	manage_hightest(t_list **stack_a, t_list **stack_b, t_data *data
+						, int (*f)(t_list *stack))
 {
-	find_hightest((*stack_a), data);
-	if (data->hightest_nbplace == 2)
-		swap(stack_a, 'a', data);
-	if (data->hightest_nbplace == 3)
+	int	i;
+
+	i = f((*stack_a));
+	if (i <= data->mediane && i != 1)
 	{
-			rotate(stack_a, 'a', data);
+		while (i-- != 1)
 			rotate(stack_a, 'a', data);
 	}
-	if (data->hightest_nbplace == 4)
-	{
-		if (data->size == 4)
+	if (i > data->mediane)
+		while (i++ != data->size)
 			reverse_rotate(stack_a, 'a', data);
-	}
-	if (data->hightest_nbplace == 5)
-		reverse_rotate(stack_a, 'a', data);
 	push(stack_a, stack_b, 'b', data);
-	}
+}
+
+//TODO modifier manage_lowest
 
 void	manage_lowest(t_list **stack_a, t_list **stack_b, t_data *data)
 {

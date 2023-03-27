@@ -6,7 +6,7 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:09:36 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/22 18:47:34 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:12:44 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_data
 	int		hightest_nbplace;
 	int		lowestnb_place;
 	int		size;
+	int		mediane;
 	t_move	move;
 }	t_data;
 
@@ -55,6 +56,8 @@ void	print_lst(t_list *data);
 void	error_msg(char *msg, int tofree, t_list **data);
 long	ft_long_atoi(const char *str);
 void	clear_progr(t_list **stack_a, t_list **stack_b, t_data *data);
+void	find_mediane(t_list *stack, t_data *data);
+
 void	null_struc(t_data *data);
 
 void	check_integrity(char **argv, int argc, t_list *data);
@@ -77,11 +80,11 @@ void	sorting_fivenb_algo(t_list **stack_a, t_list **stack_b, t_data *data);
 
 int		verify_stack(t_list *stack, t_data *data);
 void	find_lowest(t_list *stack, t_data *data);
-void	find_hightest(t_list *stack_a, t_data *data);
+int		find_hightest(t_list *stack_a);
 int		find_a_place(t_list *stack);
 
 void	hightest_down(t_list **stack, t_data *data);
-void	manage_hightest(t_list **stack_a, t_list **stack_b, t_data *data);
+void	manage_hightest(t_list **stack_a, t_list **stack_b, t_data *data, int (*f)(t_list *stack));
 void	manage_lowest(t_list **stack_a, t_list **stack_b, t_data *data);
 
 
