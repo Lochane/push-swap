@@ -6,7 +6,7 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:37:43 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/27 14:12:52 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:51:19 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	manage_hightest(t_list **stack_a, t_list **stack_b, t_data *data
 	push(stack_a, stack_b, 'b', data);
 }
 
-//TODO modifier manage_lowest
+//TODO verifier si tout peut fonctionner avec manage hightest
 
 void	manage_lowest(t_list **stack_a, t_list **stack_b, t_data *data)
 {

@@ -6,7 +6,7 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 02:46:03 by lochane           #+#    #+#             */
-/*   Updated: 2023/03/27 14:16:04 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:50:54 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,6 @@ int	find_hightest(t_list *stack)
 	}
 	return (rank);
 }
-
-//TODO modifier find lowest pour qu'il soit comme find hightest
-
 
 void	find_lowest(t_list *stack, t_data *data)
 {
