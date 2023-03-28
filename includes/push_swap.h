@@ -6,7 +6,7 @@
 /*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:09:36 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/28 04:28:47 by lochane          ###   ########.fr       */
+/*   Updated: 2023/03/28 16:38:12 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ t_list	*build_linkedlst_struct(int argc, char **argv, t_data *data);
 t_list	*create_newnode(long nbr, t_list *data);
 
 void	initialise_move_struct(t_data *data);
-void	initialise_struct(t_list *stack_a, t_data *data);
+void	initialise_struct(t_list *stack_a, t_data *data, int argc);
 
 void	print_result(t_list *stack_a, t_list *stack_b);
 void	print_lst(t_list *data);
@@ -76,13 +76,13 @@ void	rreverse_rotate(t_list **stack_a, t_list **stack_b, char c,
 			t_data *data);
 
 void	sorting_threenb_algo(t_list **stack_a, t_data *data);
-void	sorting_fivenb_algo(t_list **stack_a, t_list **stack_b, t_data *data);
+void	sorting_fivenb_algo(t_list **stack_a, t_list **stack_b, t_data *data, int argc);
 
 
 int		find_hightest(t_list *stack_a);
 int		find_lowest(t_list *stack);
 int		verify_stack(t_list *stack, t_data *data);
-int		find_two_lowest(t_list *stack, t_data *data);
+void		find_two_lowest(t_list *stack, t_data *data);
 
 void	hightest_down(t_list **stack, t_data *data);
 void	put_on_top(t_list **stack_a, t_list **stack_b, t_data *data, int i);

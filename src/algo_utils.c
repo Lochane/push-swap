@@ -6,7 +6,7 @@
 /*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 02:46:03 by lochane           #+#    #+#             */
-/*   Updated: 2023/03/28 04:15:33 by lochane          ###   ########.fr       */
+/*   Updated: 2023/03/28 16:54:00 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,24 +56,17 @@ int	find_lowest(t_list *stack)
 	return (rank);
 }
 
-int	find_two_lowest(t_list *stack, t_data *data)
+void	find_two_lowest(t_list *stack, t_data *data)
 {
 	t_list	*tmp;
 	int		i;
-	int		rank;
 
 	i = 1;
-	rank = 0;
 	tmp = stack;
+	data->lowestnb_place = find_lowest(stack);
 	while (stack)
 	{
-		if (*(int *)stack->content <= *(int *)tmp->content
-			&& data->lowestnb_place == 1)
-		{
-			tmp = stack->next;
-			data->lowestnb_place = i;
-		}
-		else if (*(int *)stack->content <= *(int *)tmp->content && i != data->lowestnb_place)
+		if (*(int *)stack->content <= *(int *)tmp->content && i != data->lowestnb_place)
 		{
 			tmp = stack;
 			data->lowestnb_place2 = i;
@@ -81,7 +74,6 @@ int	find_two_lowest(t_list *stack, t_data *data)
 		i++;
 		stack = stack->next;
 	}
-	return (rank);
 }
 
 int	verify_stack(t_list *stack, t_data *data)
@@ -107,6 +99,7 @@ int	verify_stack(t_list *stack, t_data *data)
 
 void	put_on_top(t_list **stack_a, t_list **stack_b, t_data *data, int i)
 {
+	printf("Mediane = %d\ni = %d\n", data->mediane, data->tmp_size);
 	if (i <= data->mediane && i != 1)
 	{
 		while (i-- != 1)
@@ -114,7 +107,7 @@ void	put_on_top(t_list **stack_a, t_list **stack_b, t_data *data, int i)
 	}
 	if (i > data->mediane)
 	{
-		while (i <= data->size)
+		while (i <= data->tmp_size)
 		{
 			reverse_rotate(stack_a, 'a', data);
 			i++;
