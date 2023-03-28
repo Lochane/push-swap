@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:09:36 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/27 20:40:01 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/03/28 04:28:47 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_data
 	int		hightest_nbplace;
 	int		lowestnb_place;
 	int		lowestnb_place2;
+	int		tmp_size;
 	int		size;
 	int		mediane;
 	t_move	move;
@@ -78,13 +79,13 @@ void	sorting_threenb_algo(t_list **stack_a, t_data *data);
 void	sorting_fivenb_algo(t_list **stack_a, t_list **stack_b, t_data *data);
 
 
-int		verify_stack(t_list *stack, t_data *data);
-int		find_lowest(t_list *stack, t_data *data);
 int		find_hightest(t_list *stack_a);
-int		find_a_place(t_list *stack);
+int		find_lowest(t_list *stack);
+int		verify_stack(t_list *stack, t_data *data);
+int		find_two_lowest(t_list *stack, t_data *data);
 
 void	hightest_down(t_list **stack, t_data *data);
-void	put_on_top(t_list **stack_a, t_list **stack_b, t_data *data);
+void	put_on_top(t_list **stack_a, t_list **stack_b, t_data *data, int i);
 void	manage_lowest(t_list **stack_a, t_list **stack_b, t_data *data);
 
 int		who_is_closer(t_list *stack, t_data *data);
