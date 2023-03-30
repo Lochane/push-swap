@@ -6,7 +6,7 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 23:42:44 by lochane           #+#    #+#             */
-/*   Updated: 2023/03/22 15:38:40 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/03/30 17:42:49 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	reverse_rotate(t_list **stack, char c, t_data *data)
 	if (c == 'b')
 		data->move.rrb += 1;
 	data->move.total += 1;
+	
 	ft_printf("rr%c\n", c);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 02:46:03 by lochane           #+#    #+#             */
-/*   Updated: 2023/03/28 16:54:00 by lochane          ###   ########.fr       */
+/*   Updated: 2023/03/30 18:10:18 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,19 @@ void	find_two_lowest(t_list *stack, t_data *data)
 	int		i;
 
 	i = 1;
-	tmp = stack;
 	data->lowestnb_place = find_lowest(stack);
+	if (data->lowestnb_place == 1)
+		tmp = stack->next;
+	else
+		tmp = stack;
 	while (stack)
 	{
-		if (*(int *)stack->content <= *(int *)tmp->content && i != data->lowestnb_place)
+		if (*(int *)stack->content <= *(int *)tmp->content
+			&& i != data->lowestnb_place)
 		{
 			tmp = stack;
 			data->lowestnb_place2 = i;
-		} 
+		}
 		i++;
 		stack = stack->next;
 	}
@@ -99,7 +103,6 @@ int	verify_stack(t_list *stack, t_data *data)
 
 void	put_on_top(t_list **stack_a, t_list **stack_b, t_data *data, int i)
 {
-	printf("Mediane = %d\ni = %d\n", data->mediane, data->tmp_size);
 	if (i <= data->mediane && i != 1)
 	{
 		while (i-- != 1)
@@ -125,8 +128,6 @@ int	who_is_closer(t_list *stack, t_data *data)
 	find_two_lowest(stack, data);
 	nb_move = nb_move_count(data->lowestnb_place, data);
 	nb_move2 = nb_move_count(data->lowestnb_place2, data);
-	printf("first lowest place %d\n", data->lowestnb_place);
-	printf("second lowest place %d\n", data->lowestnb_place2);
 	if (nb_move2 < nb_move)
 		return (data->lowestnb_place2);
 	else

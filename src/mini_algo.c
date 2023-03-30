@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mini_algo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:35:35 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/28 16:50:26 by lochane          ###   ########.fr       */
+/*   Updated: 2023/03/30 18:10:30 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ void	sorting_fivenb_algo(t_list **stack_a, t_list **stack_b, t_data *data, int a
 {
 	int	closest;
 
-	(void)argc;
-	closest = who_is_closer((*stack_a), data);
-	printf("%d\n", closest);
+	if (argc == 5)
+		closest = find_lowest((*stack_a));
+	else
+		closest = who_is_closer((*stack_a), data);
 	put_on_top(stack_a, stack_b, data, closest);
-	printf("size is %d\n", data->size);
 	if (data->size > 4)
 	{
 		put_on_top(stack_a, stack_b, data, find_lowest((*stack_a)));
