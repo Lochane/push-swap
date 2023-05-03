@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:46:28 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/30 18:10:40 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/05/03 13:58:18 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,12 @@ int	main(int argc, char **argv)
 	initialise_struct(stack_a, data, argc);
 	if (verify_stack(stack_a, data) == 1)
 		return (clear_progr(&stack_a, &stack_b, data), 0);
-	if (argc == 4)
-		sorting_threenb_algo(&stack_a, data);
-	if (argc == 5 || argc == 6)
-		sorting_fivenb_algo(&stack_a, &stack_b, data, argc);
+//	if (argc == 4)
+//		sorting_threenb_algo(&stack_a, data);
+//	if (argc == 5 || argc == 6)
+//		sorting_fivenb_algo(&stack_a, &stack_b, data, argc);
+	
+	radix(&stack_a, &stack_b, data);
 	printf("----------\n");
 	print_lst(stack_a);
 	printf("----------\n");

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_linkedlist.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:33:31 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/20 16:03:05 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/05/03 12:56:25 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ t_list	*create_newnode(long nbr, t_list *list)
 	*content = nbr;
 	node->content = content;
 	node->next = NULL;
+	node->index = 0;
 	return (node);
 }
 

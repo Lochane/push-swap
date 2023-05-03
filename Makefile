@@ -7,7 +7,7 @@ OBJDIR = obj
 SRCS = $(SRCDIR)/push_swap.c $(SRCDIR)/manage_linkedlist.c $(SRCDIR)/check.c $(SRCDIR)/utils.c \
 		$(SRCDIR)/push.c $(SRCDIR)/swap.c $(SRCDIR)/rotate.c $(SRCDIR)/reverse_rotate.c \
 		$(SRCDIR)/print_pile.c $(SRCDIR)/mini_algo.c $(SRCDIR)/algo_utils.c\
-		$(SRCDIR)/manage_struct.c \
+		$(SRCDIR)/manage_struct.c $(SRCDIR)/algo.c \
 # INC = $(addprefix includes/, push_swap.h)
 OBJS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRCS))
  

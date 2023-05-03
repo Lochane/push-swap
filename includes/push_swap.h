@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:09:36 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/30 17:36:34 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/05/03 13:50:09 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,10 @@ int		who_is_closer(t_list *stack, t_data *data);
 int		nb_move_count(int nb, t_data *data);
 
 
+void	simplify_stack(t_list *a, t_data *data);
+int		*lst_to_intarray(t_list *a, t_data *data);
+int	get_max_bits(t_data *data);
+void	radix(t_list **a, t_list **b, t_data *data);
 
 
 #endif
