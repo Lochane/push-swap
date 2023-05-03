@@ -6,16 +6,12 @@
 /*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:05:49 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/05/03 13:57:36 by lochane          ###   ########.fr       */
+/*   Updated: 2023/05/03 14:37:39 by lochane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/* Trouver les 2 plus petits
-	push celui qui se trouve le plus proche du haut de la pile
-	trier dans b pqr ordre decroissant
-	push dans a*/
 
 int	*lst_to_intarray(t_list *a, t_data *data)
 {
@@ -61,21 +57,12 @@ void	simplify_stack(t_list *a, t_data *data)
 int	get_max_bits(t_data *data)
 {
 	int	max_bits;
-	
-	if (data->size <= 7)
-		max_bits = 3;
-	else if (data->size <= 15)
-		max_bits = 4;
-	else if (data->size <= 31)
-		max_bits = 5;
-	else if (data->size <= 63)
-		max_bits = 6;
-	else if (data->size <= 127)
-		max_bits = 7;
-	else if (data->size <= 255)
-		max_bits = 8;
-	else if (data->size <= 511)
-		max_bits = 9;
+	int	max_num;
+
+	max_num = data->size - 1;
+	max_bits = 0;
+	while ((max_num >> max_bits) != 0)
+		++max_bits;
 	return (max_bits);
 }
 
