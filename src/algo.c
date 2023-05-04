@@ -3,38 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lochane <lochane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:05:49 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/05/03 14:37:39 by lochane          ###   ########.fr       */
+/*   Updated: 2023/05/04 13:53:39 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-
 int	*lst_to_intarray(t_list *a, t_data *data)
 {
-	int i;
-	int *tab;
-	
+	int	i;
+	int	*tab;
+
 	tab = malloc(sizeof(int) * (data->size + 1));
 	i = 0;
 	while (a)
 	{
-		tab[i]= *(int *)a->content;
+		tab[i] = *(int *)a->content;
 		a = a->next;
 		i++;
 	}
 	return (tab);
-	
 }
 
 void	simplify_stack(t_list *a, t_data *data)
 {
 	int	i;
-	int j;
-	int *tab;
+	int	j;
+	int	*tab;
 
 	i = 0;
 	j = 0;
@@ -68,30 +66,28 @@ int	get_max_bits(t_data *data)
 
 void	radix(t_list **a, t_list **b, t_data *data)
 {
-	t_list *tmp;
-	int max_bits;
-	int	i;
-	int	j;
+	t_list	*tmp;
+	int		max_bits;
+	int		i;
+	int		j;
 
-	i = 0;
-	j = 0;
+	i = -1;
+	j = -1;
 	max_bits = get_max_bits(data);
 	simplify_stack(*(a), data);
-	while (i < max_bits)
+	while (++i < max_bits)
 	{
 		tmp = *a;
-		while (j < data->size)
+		while (++j < data->size)
 		{
-			if (((tmp->index>>i)&1)== 1)
+			if (((tmp->index >> i) & 1) == 1)
 				rotate(a, 'a', data);
 			else
 				push(a, b, 'b', data);
 			tmp = *a;
-			j++;
 		}
 		while (*b)
 			push(b, a, 'a', data);
-		j = 0;
-		i++;
+		j = -1;
 	}
-}	
+}

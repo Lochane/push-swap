@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_utils.c                                       :+:      :+:    :+:   */
+/*   mini_algo_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/21 02:46:03 by lochane           #+#    #+#             */
-/*   Updated: 2023/03/30 18:10:18 by lsouquie         ###   ########.fr       */
+/*   Created: 2023/03/21 02:46:03 by lsouquie          #+#    #+#             */
+/*   Updated: 2023/05/04 13:55:08 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,48 +117,4 @@ void	put_on_top(t_list **stack_a, t_list **stack_b, t_data *data, int i)
 		}
 	}
 	push(stack_a, stack_b, 'b', data);
-}
-
-int	who_is_closer(t_list *stack, t_data *data)
-{
-	int	nb_move;
-	int	nb_move2;
-	int	tmp;
-
-	find_two_lowest(stack, data);
-	nb_move = nb_move_count(data->lowestnb_place, data);
-	nb_move2 = nb_move_count(data->lowestnb_place2, data);
-	if (nb_move2 < nb_move)
-		return (data->lowestnb_place2);
-	else
-	{
-		tmp = data->lowestnb_place;
-		data->lowestnb_place = data->lowestnb_place2;
-		data->lowestnb_place2 = tmp;
-		return (data->lowestnb_place2);
-	}
-}
-
-int	nb_move_count(int nb, t_data *data)
-{
-	int i;
-
-	i = 0;
-	if (nb <= data->mediane)
-	{
-		while (nb != 1)
-		{
-			i++;
-			nb--;
-		}
-	}	
-	if (nb > data->mediane)
-	{
-		while (nb <= data->size)
-		{
-			i++;
-			nb++;
-		}
-	}
-	return (i);
 }

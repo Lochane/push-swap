@@ -53,5 +53,3 @@ void	clear_progr(t_list **stack_a, t_list **stack_b, t_data *data)
 	free(data);
 	exit(1);
 }
-
-
