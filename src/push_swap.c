@@ -6,7 +6,7 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:46:28 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/05/04 15:54:47 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:18:20 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 		sorting_threenb_algo(&stack_a, data);
 	if (argc == 5 || argc == 6)
 		sorting_fivenb_algo(&stack_a, &stack_b, data, argc);
-	else
+	if (argc > 6)
 		radix(&stack_a, &stack_b, data);
 	ft_printf("Total move = %d\n", data->move.total); // TODO verifier si c4est necessaire
 	clear_progr(&stack_a, &stack_b, data);
