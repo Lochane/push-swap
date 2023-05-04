@@ -6,7 +6,7 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:34:29 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/05/04 14:27:57 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:39:27 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,15 @@
 void	check_integrity(char **argv, int argc, t_list *arg, t_data *data)
 {
 	if (argc < 1)
-		error_msg("Error\n", 0, &arg, data);
+	{
+		free(data);
+		exit (0);
+	}
 	if (argc < 3)
-		error_msg("Error\n", 0, &arg, data);
+	{
+		free(data);
+		exit (0);
+	}
 	check_nbr(argv, argc, arg, data);
 }
 

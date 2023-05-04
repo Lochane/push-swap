@@ -6,15 +6,16 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:35:35 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/05/04 14:07:10 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:34:24 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sorting_threenb_algo(t_list **stack_a, t_data *data)
+void	sorting_threenb_algo(t_list **stack_a, t_data *data, int argc)
 {
-	hightest_down(stack_a, data);
+	if (argc == 4)
+		hightest_down(stack_a, data);
 	if (verify_stack((*stack_a), data) == 0)
 		swap(stack_a, 'a', data);
 }
@@ -35,7 +36,7 @@ t_data *data, int argc)
 		if (verify_stack((*stack_b), data) == 1)
 			rotate(stack_b, 'b', data);
 	}
-	sorting_threenb_algo(stack_a, data);
+	sorting_threenb_algo(stack_a, data, argc);
 	push(stack_b, stack_a, 'a', data);
 	if (verify_stack((*stack_a), data) == 0)
 		rotate(stack_a, 'a', data);
