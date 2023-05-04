@@ -6,16 +6,17 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:29:08 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/03/27 13:47:30 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:41:48 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	error_msg(char *msg, int tofree, t_list **data)
+void	error_msg(char *msg, int tofree, t_list **arg, t_data *data)
 {
 	if (tofree == 1)
-		ft_lstclear(data, &free);
+		ft_lstclear(arg, &free);
+	free(data);
 	write(2, msg, ft_strlen(msg));
 	exit (0);
 }

@@ -6,15 +6,14 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 13:43:46 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/05/04 13:52:58 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:41:01 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	initialise_struct(t_list *stack_a, t_data *data, int argc)
+void	initialise_struct(t_list *stack_a, t_data *data)
 {
-	(void)argc;
 	data->tmp_size = ft_lstsize(stack_a);
 	data->hightest_nbplace = 1;
 	data->lowestnb_place = 0;

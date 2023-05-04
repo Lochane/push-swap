@@ -6,7 +6,7 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:09:36 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/05/04 14:09:45 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:41:06 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,24 +48,24 @@ typedef struct s_data
 /* Manage linkedlist */
 
 t_list	*build_linkedlst_struct(int argc, char **argv, t_data *data);
-t_list	*create_newnode(long nbr, t_list *data);
+t_list	*create_newnode(long nbr, t_list *list, t_data *data);
 
 /* Manage struct */
 
 void	initialise_move_struct(t_data *data);
-void	initialise_struct(t_list *stack_a, t_data *data, int argc);
+void	initialise_struct(t_list *stack_a, t_data *data);
 
 /* Utils */
 
-void	error_msg(char *msg, int tofree, t_list **data);
+void	error_msg(char *msg, int tofree, t_list **arg, t_data *data);
 long	ft_long_atoi(const char *str);
 void	clear_progr(t_list **stack_a, t_list **stack_b, t_data *data);
 
 /* Check */
 
-void	check_integrity(char **argv, int argc, t_list *data);
-int		check_double_nbr(t_list *data);
-void	check_nbr(char **argv, int argc, t_list *data);
+void	check_integrity(char **argv, int argc, t_list *arg, t_data *data);
+int		check_double_nbr(t_list *arg);
+void	check_nbr(char **argv, int argc, t_list *arg, t_data *data);
 
 /* Moves */
 
