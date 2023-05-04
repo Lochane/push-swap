@@ -6,7 +6,7 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:33:31 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/05/04 16:23:55 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:47:33 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ t_list	*create_newnode(long nbr, t_list *list, t_data *data)
 		error_msg("Error\n", 1, &list, data);
 	node = malloc(sizeof(t_list));
 	if (!node)
-		return (NULL);
+		exit (0);
 	content = malloc(sizeof(int) * 1);
 	if (!content)
 	{
 		free(node);
-		return (NULL);
+		exit (0);
 	}
 	*content = nbr;
 	node->content = content;

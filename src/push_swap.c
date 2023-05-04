@@ -6,7 +6,7 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:46:28 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/05/04 16:43:01 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:48:07 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	data = malloc(sizeof(t_data));
+	if (!data)
+		exit (0);
 	check_integrity(argv, argc, stack_a, data);
 	stack_a = build_linkedlst_struct(argc, argv, data);
 	initialise_struct(stack_a, data);

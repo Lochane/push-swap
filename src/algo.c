@@ -6,7 +6,7 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:05:49 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/05/04 13:53:39 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:46:47 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	*lst_to_intarray(t_list *a, t_data *data)
 	int	*tab;
 
 	tab = malloc(sizeof(int) * (data->size + 1));
+	if (!tab)
+		exit (0);
 	i = 0;
 	while (a)
 	{
