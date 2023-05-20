@@ -6,7 +6,7 @@
 /*   By: lsouquie <lsouquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:35:35 by lsouquie          #+#    #+#             */
-/*   Updated: 2023/05/04 16:34:24 by lsouquie         ###   ########.fr       */
+/*   Updated: 2023/05/20 15:25:50 by lsouquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_data *data, int argc)
 		if (verify_stack((*stack_b), data) == 1)
 			rotate(stack_b, 'b', data);
 	}
-	sorting_threenb_algo(stack_a, data, argc);
+	sorting_threenb_algo(stack_a, data, 4);
 	push(stack_b, stack_a, 'a', data);
 	if (verify_stack((*stack_a), data) == 0)
 		rotate(stack_a, 'a', data);
